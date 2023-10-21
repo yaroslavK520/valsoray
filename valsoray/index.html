@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaroslav Kelemen</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    
+      <div class="header">
+        <div class="header__items">
+          <div class="header__image">
+            <img src="./avatar.jpg" width="200" alt="тут моя фотка" />
+          </div>
+          <div class="header__text">
+            <h1>Yaroslav Kelemen</h1>
+            <p>I am the founder of <strong>Valsoray Games</strong></p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="social">
+        <h2>My socials</h2>
+        <ul>
+          <li class="instagram"><a href="https://instagram.com/yaroslav_460" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+  
+      <div class="hobbies">
+        <h2>My hobbies</h2>
+        <ul>
+          <li>Traveling</li>
+          <li>Hiking</li>
+          <li>Sport: volleyball, calisthenics</li>
+          <li>Gaming</li>
+        </ul>
+      </div>
+  
+      
+      
+      <div class="form">
+        <h2>Contact me</h2>
+        <div class="form-content">
+          <form action="/">
+            <label for="name">Your name:</label>
+            <input type="text" id="name" placeholder="Enter your name...">
+            <br>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" placeholder="Enter email...">
+            <br>
+            <label for="text">Your message:</label>
+            <br>
+            <textarea id="text" rows="2" cols="15"></textarea>
+            <br>
+            <button id="btn">Send!</button>
+          </form>
+        </div>
+      </div>
+    
+    <script>
+      const btn = document.getElementById('id');
+
+      btn.addEventListener(btn, (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('text').value;
+
+        let body = 'Name: ' + name + '<br/> Email: ' + email + '<br/> Message: ' + message;  
+
+        Email.send({
+          SecureToken : "023c1e31-e4ec-40a7-a0f4-0f87fb267d9b",
+          To : 'yaroslavkelemen14@gmail.com',
+          From : "yaroslav.project1@gmail.com",
+          Subject : "Contact message",
+          Body : body
+        }).then(
+          message => alert(message)
+        );
+      });
+    </script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+  </body>
+</html>
